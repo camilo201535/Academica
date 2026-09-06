@@ -10,9 +10,11 @@ public class Estudiante
     public string Nombre { get; set;} = string.Empty;
 
     public string Correo { get; set; } = string.Empty;
+
+   
    
     public int ProgramaAcademicoId { get; set; }
-
+    public string? Celular { get; set; }
     public ProgramaAcademico? ProgramaAcademico { get; set;} //relacion con el programa academico 
 
 }
