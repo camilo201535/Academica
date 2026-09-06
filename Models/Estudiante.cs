@@ -15,6 +15,8 @@ public class Estudiante
    
     public int ProgramaAcademicoId { get; set; }
     public string? Celular { get; set; }
+
+    public string? Direccion { get;}
     public ProgramaAcademico? ProgramaAcademico { get; set;} //relacion con el programa academico 
 
 }
