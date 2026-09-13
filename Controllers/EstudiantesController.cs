@@ -27,7 +27,17 @@ public class   EstudiantesController : ControllerBase
         
          return Ok(estudiantes); 
     }
+    
+    [HttpGet("buscar/{nombre}")]
+    public async Task<ActionResult<List<Estudiante>>> BuscarEstudiantesPorNombre(string nombre)
+    {
+        var estudiantes = await _estudiantesRepository.GetAllEstudiantesAsync();
+        var resultado = estudiantes
+            .Where(e => e.Nombre.Contains(nombre, StringComparison.OrdinalIgnoreCase))
+            .ToList();
 
+        return Ok(resultado);
+    }
 
 
     [HttpGet("{id}")]
