@@ -62,6 +62,13 @@ public class   EstudiantesController : ControllerBase
         return NoContent();
     }
 
+    [HttpGet("contar")]
+    public async Task<ActionResult<int>> ContarEstudiantes()
+    {
+        var estudiantes = await _estudiantesRepository.GetAllEstudiantesAsync();
+        return Ok(estudiantes.Count);
+    }
+
 
   [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteEstudiante(int id )
